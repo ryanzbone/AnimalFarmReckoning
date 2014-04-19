@@ -154,8 +154,9 @@ canJump = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (canJump)
+            <string>if (canJump) {
     scr_jump();
+}
 canJump = false;
 </string>
           </argument>

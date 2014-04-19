@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>scr_gravity(gravityDirection, gravityAccel);
 
+
 </string>
           </argument>
         </arguments>
@@ -51,7 +52,13 @@
             <kind>1</kind>
             <string>move_contact_solid(direction, 12);
 vspeed = 0;
-hspeed = 0;
+if( !collision_point(x,y+sprite_get_height(spr_player1),obj_parent_floor,false,true) ){
+  //   &amp;&amp; (!collision_point(x+sprite_get_width(spr_player1),y,obj_parent_floor,false,true) 
+    // || !collision_point(x-sprite_get_width(spr_player1),y,obj_parent_floor,false,true)) ){
+    hspeed = 0;
+} else if(collision_point(x,y+sprite_get_height(spr_player1),obj_parent_floor,false,true)) {
+    canJump = true;
+}
 </string>
           </argument>
         </arguments>

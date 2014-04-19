@@ -6,7 +6,7 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
-    <sprite>sprites\spr_sprite0</sprite>
+    <sprite>sprites\spr_player1</sprite>
     <sprite>sprites\spr_floor_basic</sprite>
   </sprites>
   <backgrounds name="background">
@@ -21,21 +21,26 @@
     <script>scripts\scr_gravity.gml</script>
   </scripts>
   <objects name="objects">
-    <object>objects\obj_player1</object>
-    <object>objects\obj_parent_floor</object>
-    <object>objects\obj_parent_player</object>
-    <object>objects\obj_floor_basic</object>
+    <objects name="Player">
+      <object>objects\obj_player1</object>
+      <object>objects\obj_parent_player</object>
+    </objects>
+    <objects name="Floors">
+      <object>objects\obj_parent_floor</object>
+      <object>objects\obj_floor_basic</object>
+    </objects>
   </objects>
   <timelines name="timelines"/>
   <rooms name="rooms">
     <room>rooms\SandBox</room>
   </rooms>
-  <constants number="5">
+  <constants number="6">
     <constant name="moveRight">0</constant>
     <constant name="moveLeft">1</constant>
     <constant name="gravityDirection">270</constant>
     <constant name="gravityAccel">0.6</constant>
     <constant name="jumpForce">15</constant>
+    <constant name="friction">1.2</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>

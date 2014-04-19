@@ -12,6 +12,7 @@
     <sprite>sprites\spr_gun</sprite>
     <sprite>sprites\spr_pig</sprite>
     <sprite>sprites\sprite5</sprite>
+    <sprite>sprites\spr_pig_pickup</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -38,18 +39,22 @@
       <object>objects\obj_player1</object>
       <object>objects\obj_player2</object>
       <object>objects\obj_parent_player</object>
+      <object>objects\obj_gun</object>
     </objects>
     <objects name="Floors">
       <object>objects\obj_parent_floor</object>
       <object>objects\obj_floor_basic</object>
     </objects>
-    <object>objects\obj_gun</object>
     <objects name="Animals">
       <object>objects\obj_pig</object>
       <object>objects\obj_parent_animal</object>
       <object>objects\obj_rabbit</object>
     </objects>
-    <object>objects\obj_no_ammo</object>
+    <objects name="Pickups">
+      <object>objects\obj_parent_pickup</object>
+      <object>objects\obj_pig_pickup</object>
+      <object>objects\obj_no_ammo</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\SandBox</room>

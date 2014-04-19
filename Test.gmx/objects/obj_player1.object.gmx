@@ -152,7 +152,10 @@ ammoType = obj_pig;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_shoot(ammoType);
+            <string>if(ammoCount &gt; 0){
+    scr_shoot(ammoType);
+    ammoCount--;
+}
 </string>
           </argument>
         </arguments>

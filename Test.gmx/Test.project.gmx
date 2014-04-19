@@ -9,6 +9,7 @@
     <sprite>sprites\spr_player1</sprite>
     <sprite>sprites\spr_player2</sprite>
     <sprite>sprites\spr_floor_basic</sprite>
+    <sprite>sprites\spr_gun</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -19,6 +20,7 @@
       <script>scripts\scr_movement.gml</script>
       <script>scripts\scr_jump.gml</script>
       <script>scripts\scr_apply_friction.gml</script>
+      <script>scripts\scr_aim_gun.gml</script>
     </scripts>
     <script>scripts\scr_gravity.gml</script>
     <scripts name="Collisions">
@@ -38,6 +40,7 @@
       <object>objects\obj_parent_floor</object>
       <object>objects\obj_floor_basic</object>
     </objects>
+    <object>objects\obj_gun</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\SandBox</room>

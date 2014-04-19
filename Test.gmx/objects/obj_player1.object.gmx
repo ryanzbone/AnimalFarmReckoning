@@ -3,7 +3,7 @@
   <spriteName>spr_player1</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-100</depth>
   <persistent>0</persistent>
   <parentName>obj_parent_player</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -25,11 +25,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>gunAngle = 0;
-canJump = true;
+            <string>event_inherited();
+gunAngle = 0;
 control_left = ord('A');
 control_right = ord('D');
-event_inherited();
+aimUp = ord('R');
+aimDown = ord('F');
+
 </string>
           </argument>
         </arguments>

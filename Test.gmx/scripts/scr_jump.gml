@@ -1,0 +1,2 @@
+self.y--;
+vspeed -= jumpForce;

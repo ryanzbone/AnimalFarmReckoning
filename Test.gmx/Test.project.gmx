@@ -7,6 +7,7 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprite>sprites\spr_sprite0</sprite>
+    <sprite>sprites\spr_floor_basic</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -15,18 +16,26 @@
   <scripts name="scripts">
     <scripts name="Player">
       <script>scripts\scr_movement.gml</script>
+      <script>scripts\scr_jump.gml</script>
     </scripts>
+    <script>scripts\scr_gravity.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\obj_player1</object>
-    <object>objects\object1</object>
+    <object>objects\obj_parent_floor</object>
+    <object>objects\obj_parent_player</object>
+    <object>objects\obj_floor_basic</object>
   </objects>
+  <timelines name="timelines"/>
   <rooms name="rooms">
-    <room>rooms\room0</room>
+    <room>rooms\SandBox</room>
   </rooms>
-  <constants number="2">
-    <constant name="moveLeft">1</constant>
+  <constants number="5">
     <constant name="moveRight">0</constant>
+    <constant name="moveLeft">1</constant>
+    <constant name="gravityDirection">270</constant>
+    <constant name="gravityAccel">0.6</constant>
+    <constant name="jumpForce">15</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>

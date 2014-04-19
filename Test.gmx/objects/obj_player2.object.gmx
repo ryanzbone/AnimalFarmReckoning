@@ -54,7 +54,7 @@ canJump = true;
             <kind>1</kind>
             <string>event_inherited();
 
-if(!keyboard_check(ord('A')) &amp;&amp; !keyboard_check(ord('D')) &amp;&amp; collision_point(x,y+sprite_get_height(spr_player1),obj_parent_floor,false,true)){
+if(!keyboard_check(vk_left) &amp;&amp; !keyboard_check(vk_right) &amp;&amp; collision_point(x,y+sprite_get_height(spr_player1),obj_parent_floor,false,true)){
     if(hspeed &gt; 0)
         hspeed -= friction;
     else if (hspeed &lt; 0)
@@ -65,7 +65,7 @@ if(!keyboard_check(ord('A')) &amp;&amp; !keyboard_check(ord('D')) &amp;&amp; col
         </arguments>
       </action>
     </event>
-    <event eventtype="5" enumb="68">
+    <event eventtype="5" enumb="39">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -89,7 +89,7 @@ if(!keyboard_check(ord('A')) &amp;&amp; !keyboard_check(ord('D')) &amp;&amp; col
         </arguments>
       </action>
     </event>
-    <event eventtype="5" enumb="65">
+    <event eventtype="5" enumb="37">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -113,7 +113,7 @@ if(!keyboard_check(ord('A')) &amp;&amp; !keyboard_check(ord('D')) &amp;&amp; col
         </arguments>
       </action>
     </event>
-    <event eventtype="9" enumb="87">
+    <event eventtype="9" enumb="38">
       <action>
         <libid>1</libid>
         <id>603</id>

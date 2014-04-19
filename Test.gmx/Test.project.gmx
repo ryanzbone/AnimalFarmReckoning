@@ -23,6 +23,7 @@
   <objects name="objects">
     <objects name="Player">
       <object>objects\obj_player1</object>
+      <object>objects\obj_player2</object>
       <object>objects\obj_parent_player</object>
     </objects>
     <objects name="Floors">

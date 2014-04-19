@@ -6,16 +6,28 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
-    <sprite>sprites\sprite0</sprite>
+    <sprite>sprites\spr_sprite0</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
   </backgrounds>
   <paths name="paths"/>
-  <objects name="objects"/>
+  <scripts name="scripts">
+    <scripts name="Player">
+      <script>scripts\scr_movement.gml</script>
+    </scripts>
+  </scripts>
+  <objects name="objects">
+    <object>objects\obj_player1</object>
+    <object>objects\object1</object>
+  </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
   </rooms>
+  <constants number="2">
+    <constant name="moveLeft">1</constant>
+    <constant name="moveRight">0</constant>
+  </constants>
   <help>
     <rtf>help.rtf</rtf>
   </help>

@@ -88,16 +88,19 @@
     </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\The_Beginning_</room>
     <room>rooms\SandBox</room>
   </rooms>
-  <constants number="13">
+  <constants number="15">
+    <constant name="playerMaxSpeed">16</constant>
+    <constant name="playerMoveSpeed">3</constant>
     <constant name="gunPower">300</constant>
     <constant name="mouseAmmo">0</constant>
     <constant name="moveRight">0</constant>
     <constant name="moveLeft">1</constant>
     <constant name="gravityDirection">270</constant>
     <constant name="gravityAccel">1</constant>
-    <constant name="jumpForce">20</constant>
+    <constant name="jumpForce">25</constant>
     <constant name="pigAmmo">50</constant>
     <constant name="elephantAmmo">50</constant>
     <constant name="rabbitAmmo">50</constant>

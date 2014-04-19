@@ -30,8 +30,8 @@ control_right = vk_right;
 control_left = vk_left;
 aimUp = vk_up;
 aimDown = vk_down;
-maxSpeed = 12;
-playerSpeed = 2;
+maxSpeed = playerMaxSpeed;
+playerSpeed = playerMoveSpeed;
 canJump = true;
 ammoType = obj_no_ammo;
 ammoCount = 0;
@@ -181,6 +181,35 @@ if(scr_check_bottom_collision(spr_player1)) {
     move_contact_solid(270, 12);
     vspeed = 0;
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_set_color(c_red);
+draw_self();
+draw_text(x,y-32,scr_check_top_collision(spr_player1));
+draw_text(x,y+32,scr_check_bottom_collision(spr_player1));
+draw_text(x-32,y,scr_check_left_collision(spr_player1));
+draw_text(x+32,y,scr_check_right_collision(spr_player1));
+draw_text(x,y-64,place_free(x+17,y));
 </string>
           </argument>
         </arguments>

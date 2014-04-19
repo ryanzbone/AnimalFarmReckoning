@@ -33,6 +33,9 @@
       <script>scripts\scr_check_left_collision.gml</script>
       <script>scripts\scr_check_right_collision.gml</script>
     </scripts>
+    <scripts name="Controller">
+      <script>scripts\scr_controller.gml</script>
+    </scripts>
   </scripts>
   <objects name="objects">
     <objects name="Player">

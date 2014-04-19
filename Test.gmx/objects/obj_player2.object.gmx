@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>event_inherited();
+controller = 1;
 gunAngle = 0;
 control_right = vk_right;
 control_left = vk_left;
@@ -126,10 +127,7 @@ aimDown = ord('L');
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(ammoCount &gt; 0){
-    scr_shoot(ammoType);
-    ammoCount--;
-}
+            <string>scr_shoot(ammoType);
 </string>
           </argument>
         </arguments>
@@ -152,10 +150,7 @@ aimDown = ord('L');
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (canJump) {
-    scr_jump();
-}
-canJump = false;
+            <string>scr_jump();
 </string>
           </argument>
         </arguments>

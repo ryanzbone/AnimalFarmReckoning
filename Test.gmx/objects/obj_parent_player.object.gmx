@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>control_right = vk_right;
+            <string>controller = 0;
+control_right = vk_right;
 control_left = vk_left;
 aimUp = vk_up;
 aimDown = vk_down;
@@ -59,7 +60,9 @@ myGun.playerId = id;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_gravity(gravityDirection, gravityAccel);
+            <string>scr_controller(controller);
+
+scr_gravity(gravityDirection, gravityAccel);
 
 scr_apply_friction(control_right, control_left);
 scr_aim_gun(aimUp,aimDown);

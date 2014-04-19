@@ -26,7 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>mass = 0;
-bounceCount = 0;
+bounceCount = 3;
+
 </string>
           </argument>
         </arguments>
@@ -92,6 +93,9 @@ bounceCount = 0;
           <argument>
             <kind>1</kind>
             <string>scr_gravity(270, gravityAccel);
+if(hspeed &lt; 0) {
+    image_yscale = -1;
+}
 </string>
           </argument>
         </arguments>
@@ -114,11 +118,11 @@ bounceCount = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(bounceCount &lt; 3) {
+            <string>if(bounceCount &gt; 0) {
     move_bounce_solid(false);
     hspeed *= 0.65;
     vspeed *= 0.65;
-    bounceCount++;
+    bounceCount--;
 } else {
     instance_destroy();
 }

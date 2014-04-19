@@ -6,13 +6,30 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
-    <sprite>sprites\spr_player1</sprite>
-    <sprite>sprites\spr_player2</sprite>
-    <sprite>sprites\spr_floor_basic</sprite>
-    <sprite>sprites\spr_gun</sprite>
-    <sprite>sprites\spr_pig</sprite>
-    <sprite>sprites\sprite5</sprite>
-    <sprite>sprites\spr_pig_pickup</sprite>
+    <sprites name="Pickups">
+      <sprite>sprites\spr_snake_pickup</sprite>
+      <sprite>sprites\spr_pig_pickup</sprite>
+      <sprite>sprites\spr_bee_pickup</sprite>
+      <sprite>sprites\spr_rabbit_pickup</sprite>
+      <sprite>sprites\spr_elephant_pickup</sprite>
+      <sprite>sprites\spr_mouse_pickup</sprite>
+    </sprites>
+    <sprites name="Player">
+      <sprite>sprites\spr_player2</sprite>
+      <sprite>sprites\spr_player1</sprite>
+      <sprite>sprites\spr_gun</sprite>
+    </sprites>
+    <sprites name="Animals">
+      <sprite>sprites\spr_snake</sprite>
+      <sprite>sprites\spr_rabbit</sprite>
+      <sprite>sprites\spr_pig</sprite>
+      <sprite>sprites\spr_elephant</sprite>
+      <sprite>sprites\spr_mouse</sprite>
+      <sprite>sprites\spr_bee</sprite>
+    </sprites>
+    <sprites name="Environment">
+      <sprite>sprites\spr_floor_basic</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -25,6 +42,8 @@
       <script>scripts\scr_apply_friction.gml</script>
       <script>scripts\scr_aim_gun.gml</script>
       <script>scripts\scr_shoot.gml</script>
+      <script>scripts\scr_gun_force.gml</script>
+      <script>scripts\scr_bee_shot.gml</script>
     </scripts>
     <script>scripts\scr_gravity.gml</script>
     <scripts name="Collisions">
@@ -50,19 +69,28 @@
     </objects>
     <objects name="Animals">
       <object>objects\obj_pig</object>
+      <object>objects\obj_snake</object>
+      <object>objects\obj_elephant</object>
+      <object>objects\obj_mouse</object>
+      <object>objects\obj_bee</object>
       <object>objects\obj_parent_animal</object>
       <object>objects\obj_rabbit</object>
     </objects>
     <objects name="Pickups">
       <object>objects\obj_parent_pickup</object>
       <object>objects\obj_pig_pickup</object>
+      <object>objects\obj_rabbit_pickup</object>
+      <object>objects\obj_elephant_pickup</object>
+      <object>objects\obj_mouse_pickup</object>
+      <object>objects\obj_bee_pickup</object>
+      <object>objects\obj_snake_pickup</object>
       <object>objects\obj_no_ammo</object>
     </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\SandBox</room>
   </rooms>
-  <constants number="7">
+  <constants number="13">
     <constant name="gunPower">300</constant>
     <constant name="mouseAmmo">0</constant>
     <constant name="moveRight">0</constant>
@@ -70,6 +98,12 @@
     <constant name="gravityDirection">270</constant>
     <constant name="gravityAccel">1</constant>
     <constant name="jumpForce">20</constant>
+    <constant name="pigAmmo">50</constant>
+    <constant name="elephantAmmo">50</constant>
+    <constant name="rabbitAmmo">50</constant>
+    <constant name="snakeAmmo">50</constant>
+    <constant name="mouseAmmo">50</constant>
+    <constant name="beeAmmo">50</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>

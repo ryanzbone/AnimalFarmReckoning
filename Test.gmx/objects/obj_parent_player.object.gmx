@@ -8,6 +8,32 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>control_right = vk_right;
+control_left = vk_left;
+maxSpeed = 12;
+playerSpeed = 2;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
@@ -27,7 +53,16 @@
             <kind>1</kind>
             <string>scr_gravity(gravityDirection, gravityAccel);
 
+scr_apply_friction(control_right, control_left);
 
+if(scr_check_bottom_collision(spr_player1)) {
+    canJump = true;
+} else {
+    canJump = false;
+}
+
+if(vspeed &gt; maxSpeed)
+    vspeed = maxSpeed;
 </string>
           </argument>
         </arguments>
@@ -50,14 +85,22 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>move_contact_solid(direction, 12);
-vspeed = 0;
-if( !collision_point(x,y+sprite_get_height(spr_player1),obj_parent_floor,false,true) ){
-  //   &amp;&amp; (!collision_point(x+sprite_get_width(spr_player1),y,obj_parent_floor,false,true) 
-    // || !collision_point(x-sprite_get_width(spr_player1),y,obj_parent_floor,false,true)) ){
+            <string>// if we've hit a wall, set horizontal speed to zero
+if(scr_check_left_collision(spr_player1) || scr_check_right_collision(spr_player1)){
+    if (hspeed &gt; 0)
+        move_contact_solid(0, 12);
+    else 
+        move_contact_solid(180, 12);
     hspeed = 0;
-} else if(collision_point(x,y+sprite_get_height(spr_player1),obj_parent_floor,false,true)) {
-    canJump = true;
+
+} 
+if(scr_check_top_collision(spr_player1)) {  
+    move_contact_solid(90, 12);
+    vspeed *= -0.6;
+} 
+if(scr_check_bottom_collision(spr_player1)) {
+    move_contact_solid(270, 12);
+    vspeed = 0;
 }
 </string>
           </argument>

@@ -25,11 +25,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>playerSpeed = 2;
-gunAngle = 0;
-maxSpeed = 12;
+            <string>gunAngle = 0;
 canJump = true;
-//event_inherited();
+control_right = vk_right;
+control_left = vk_left;
+event_inherited();
 </string>
           </argument>
         </arguments>
@@ -54,12 +54,6 @@ canJump = true;
             <kind>1</kind>
             <string>event_inherited();
 
-if(!keyboard_check(vk_left) &amp;&amp; !keyboard_check(vk_right) &amp;&amp; collision_point(x,y+sprite_get_height(spr_player1),obj_parent_floor,false,true)){
-    if(hspeed &gt; 0)
-        hspeed -= friction;
-    else if (hspeed &lt; 0)
-        hspeed += friction;
-}
 </string>
           </argument>
         </arguments>

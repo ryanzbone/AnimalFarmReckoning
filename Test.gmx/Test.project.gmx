@@ -10,6 +10,8 @@
     <sprite>sprites\spr_player2</sprite>
     <sprite>sprites\spr_floor_basic</sprite>
     <sprite>sprites\spr_gun</sprite>
+    <sprite>sprites\spr_pig</sprite>
+    <sprite>sprites\sprite5</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -21,6 +23,7 @@
       <script>scripts\scr_jump.gml</script>
       <script>scripts\scr_apply_friction.gml</script>
       <script>scripts\scr_aim_gun.gml</script>
+      <script>scripts\scr_shoot.gml</script>
     </scripts>
     <script>scripts\scr_gravity.gml</script>
     <scripts name="Collisions">
@@ -41,11 +44,19 @@
       <object>objects\obj_floor_basic</object>
     </objects>
     <object>objects\obj_gun</object>
+    <objects name="Animals">
+      <object>objects\obj_pig</object>
+      <object>objects\obj_parent_animal</object>
+      <object>objects\obj_rabbit</object>
+    </objects>
+    <object>objects\obj_no_ammo</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\SandBox</room>
   </rooms>
-  <constants number="5">
+  <constants number="7">
+    <constant name="gunPower">300</constant>
+    <constant name="mouseAmmo">0</constant>
     <constant name="moveRight">0</constant>
     <constant name="moveLeft">1</constant>
     <constant name="gravityDirection">270</constant>

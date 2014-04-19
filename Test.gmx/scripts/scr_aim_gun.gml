@@ -6,3 +6,9 @@ if(keyboard_check(aimUpKey)){
 } else if(keyboard_check(aimDownKey)){
     myGun.image_angle -= 10;
 }
+
+if(myGun.image_angle > 360){
+    myGun.image_angle = 0;
+} else if( myGun.image_angle < 0){
+    myGun.image_angle = 360;
+}

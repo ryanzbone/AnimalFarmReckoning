@@ -32,6 +32,7 @@ aimDown = vk_down;
 maxSpeed = 12;
 playerSpeed = 2;
 canJump = true;
+ammoType = obj_rabbit;
 
 myGun = instance_create(x,y,obj_gun);
 myGun.playerId = id;
@@ -70,6 +71,48 @@ if(scr_check_bottom_collision(spr_player1)) {
 
 if(vspeed &gt; maxSpeed)
     vspeed = maxSpeed;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_parent_animal">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>var hSign = 0;
+var vSign = 0;
+var theMass = 1;
+with(other) {
+    if(hspeed &gt; 0) 
+        hSign = 1;
+    else
+        hSign = -1;
+    if(vspeed &gt; 0) 
+        vSign = 1;
+    else
+        vSign = -1;
+    theMass = mass;
+    instance_destroy();
+}
+
+hspeed += (theMass * hSign);
+vspeed += (theMass * vSign);
+
+
 </string>
           </argument>
         </arguments>

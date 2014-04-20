@@ -54,24 +54,37 @@ paused = false;
           <argument>
             <kind>1</kind>
             <string>if (paused) {
+    if (!audio_is_playing(snd_menu_music)) {
+        audio_pause_all();
+        audio_play_sound(snd_menu_music,11,true);
+    }
+
     scr_level_select_movement();
      
     if (scr_menu_accept() &amp;&amp; level1) {
          instance_activate_all();  
+         audio_stop_sound(snd_menu_music);
+         audio_resume_all();
          paused = false;   
     }
     if (scr_menu_accept() &amp;&amp; level2) {
-        instance_activate_all(); 
+        instance_activate_all();  
+        audio_stop_sound(snd_menu_music);
+        audio_resume_all();
         room_restart();   
-         paused = false;      
+        paused = false;      
     }
     if (scr_menu_accept() &amp;&amp; level3) {
-        instance_activate_all(); 
+        instance_activate_all();  
+        audio_stop_sound(snd_menu_music);
+        audio_resume_all();
         room_goto(level_select);  
         paused = false;   
     }
     if (scr_menu_accept() &amp;&amp; back) {
-        instance_activate_all();
+        instance_activate_all(); 
+        audio_stop_sound(snd_menu_music);
+        audio_resume_all();
         room_goto(main_menu);  
         paused = false;   
     }
@@ -101,6 +114,8 @@ paused = false;
             <string>if (room == level_1 || room == level_2 || room == level_3) {    
     instance_deactivate_all(true);
     paused = true;
+    audio_resume_all();
+    audio_stop_sound(snd_menu_music);
 }
 </string>
           </argument>

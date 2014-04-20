@@ -8,6 +8,7 @@
     <sounds name="Menu">
       <sound>sound\snd_menu_move</sound>
       <sound>sound\snd_menu_accept</sound>
+      <sound>sound\snd_menu_music</sound>
     </sounds>
     <sounds name="Gameplay">
       <sound>sound\snd_player_spawn</sound>
@@ -17,6 +18,9 @@
       <sound>sound\snd_jump</sound>
       <sound>sound\snd_reload</sound>
     </sounds>
+    <sound>sound\snd_level1</sound>
+    <sound>sound\snd_level2</sound>
+    <sound>sound\snd_level3</sound>
   </sounds>
   <sprites name="sprites">
     <sprites name="Pickups">
@@ -153,6 +157,7 @@
       <object>objects\obj_level_end_menu</object>
       <object>objects\obj_instructions</object>
     </objects>
+    <object>objects\obj_music_manager</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\main_menu</room>

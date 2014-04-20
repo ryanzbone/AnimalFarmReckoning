@@ -98,5 +98,8 @@ if (exitBox) { draw_sprite(sprite_index, 2, room_width/2, 690); }
   <PhysicsObjectFriction>0.200000002980232</PhysicsObjectFriction>
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
-  <PhysicsShapePoints/>
+  <PhysicsShapePoints>
+    <point>195,185</point>
+    <point>176,176</point>
+  </PhysicsShapePoints>
 </object>

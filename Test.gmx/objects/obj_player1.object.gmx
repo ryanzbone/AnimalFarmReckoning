@@ -33,7 +33,7 @@ control_right = ord('D');
 aimUp = ord('R');
 aimDown = ord('F');
 ammoType = obj_pig;
-
+playerColor = c_teal;
 </string>
           </argument>
         </arguments>

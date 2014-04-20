@@ -38,6 +38,7 @@ ammoType = obj_no_ammo;
 ammoCount = 0;
 playerLives = 3;
 stunned = false;
+playerColor = c_fuchsia;
 walking = false;
 
 myGun = instance_create(x,y,obj_gun);
@@ -141,10 +142,14 @@ if(x &lt; -killRange
     || y &gt; room_height + killRange/2 
     || y &lt; -killRange) {
     playerLives--;
-    x = random_range(64,room_width-64);
-    y = 100;
-    vspeed = 0;
-    hspeed = 0;
+    audio_play_sound(snd_player_spawn, 10, false);
+    if (playerLives &gt; 0) {
+        x = random_range(64,room_width-64);
+        y = 200;
+        vspeed = 0;
+        hspeed = 0;
+        effect_create_above(ef_smokeup, x, y + 32, 2, playerColor);
+    }
 }
 
 if(playerLives &lt;= 0){
@@ -181,7 +186,8 @@ if(playerLives &lt;= 0){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>ammoType = other.pickupType;
+            <string>audio_play_sound(snd_reload, 10, false);
+ammoType = other.pickupType;
 ammoCount = other.pickupCount;
 with(other) instance_destroy();
 </string>
@@ -210,6 +216,7 @@ with(other) instance_destroy();
 var vSign = 0;
 var theImpact = 0;
 if(other.playerId != id){
+    audio_play_sound(snd_hit, 10, false);
     with(other) {
         if(hspeed &gt; 0) 
             hSign = 1;

@@ -32,7 +32,7 @@ control_right = vk_right;
 control_left = vk_left;
 aimUp = ord('O');
 aimDown = ord('L');
-
+playerColor = c_red;
 </string>
           </argument>
         </arguments>

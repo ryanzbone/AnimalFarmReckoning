@@ -58,6 +58,8 @@
       <sprite>sprites\spr_p1_lives</sprite>
       <sprite>sprites\spr_ammo_box_p2</sprite>
       <sprite>sprites\spr_p2_lives</sprite>
+      <sprite>sprites\spr_level_end_menu</sprite>
+      <sprite>sprites\spr_player_wins</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -96,6 +98,7 @@
       <script>scripts\scr_load_menu.gml</script>
       <script>scripts\scr_menu_movement.gml</script>
       <script>scripts\scr_level_select_movement.gml</script>
+      <script>scripts\scr_level_end_menu.gml</script>
       <script>scripts\scr_menu_accept.gml</script>
     </scripts>
   </scripts>
@@ -136,6 +139,7 @@
       <object>objects\obj_press_start</object>
       <object>objects\obj_start_menu</object>
       <object>objects\obj_level_select</object>
+      <object>objects\obj_level_end_menu</object>
       <object>objects\obj_instructions</object>
     </objects>
   </objects>

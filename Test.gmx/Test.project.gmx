@@ -75,6 +75,7 @@
     <background>background\bg_level_1</background>
     <background>background\bg_floor_tile</background>
     <background>background\bg_level_2</background>
+    <background>background\background6</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">

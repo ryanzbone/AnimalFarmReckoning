@@ -38,6 +38,7 @@ ammoType = obj_no_ammo;
 ammoCount = 0;
 playerLives = 3;
 stunned = false;
+playerColor = c_fuchsia;
 
 myGun = instance_create(x,y,obj_gun);
 myGun.playerId = id;
@@ -140,10 +141,14 @@ if(x &lt; -killRange
     || y &gt; room_height + killRange/2 
     || y &lt; -killRange) {
     playerLives--;
-    x = random_range(64,room_width-64);
-    y = 100;
-    vspeed = 0;
-    hspeed = 0;
+    audio_play_sound(snd_player_spawn, 10, false);
+    if (playerLives &gt; 0) {
+        x = random_range(64,room_width-64);
+        y = 200;
+        vspeed = 0;
+        hspeed = 0;
+        effect_create_above(ef_smokeup, x, y + 32, 2, playerColor);
+    }
 }
 
 if(playerLives &lt;= 0){

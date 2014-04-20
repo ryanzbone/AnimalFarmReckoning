@@ -34,7 +34,9 @@
     <sprite>sprites\spr_press_start</sprite>
   </sprites>
   <backgrounds name="background">
-    <background>background\background0</background>
+    <background>background\bg_main_menu</background>
+    <background>background\bg_instructions</background>
+    <background>background\bg_level_select</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -59,7 +61,14 @@
     <scripts name="World">
       <script>scripts\scr_gravity.gml</script>
     </scripts>
-    <script>scripts\scr_load_menu.gml</script>
+    <scripts name="Menu">
+      <script>scripts\scr_menu_down.gml</script>
+      <script>scripts\scr_menu_up.gml</script>
+      <script>scripts\scr_load_menu.gml</script>
+      <script>scripts\scr_menu_movement.gml</script>
+      <script>scripts\scr_level_select_movement.gml</script>
+      <script>scripts\scr_menu_accept.gml</script>
+    </scripts>
   </scripts>
   <objects name="objects">
     <objects name="Player">
@@ -96,13 +105,20 @@
     <objects name="Menus">
       <object>objects\obj_press_start</object>
       <object>objects\obj_start_menu</object>
+      <object>objects\obj_level_select</object>
+      <object>objects\obj_instructions</object>
     </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\press_start</room>
+    <room>rooms\main_menu</room>
+    <room>rooms\level_select</room>
     <room>rooms\The_Beginning</room>
+    <room>rooms\level_1</room>
+    <room>rooms\level_2</room>
+    <room>rooms\level_3</room>
     <room>rooms\SandBox</room>
-    <room>rooms\room3</room>
+    <room>rooms\instruction_room</room>
   </rooms>
   <constants number="16">
     <constant name="killRange">300</constant>

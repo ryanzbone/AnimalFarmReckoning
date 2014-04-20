@@ -25,9 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>play = true;
-instructions = false;
-exitBox = false
+            <string>level1 = true;
+level2 = false;
+level3 = false;
+back = false;
 moveDelay = false;
 </string>
           </argument>
@@ -51,11 +52,12 @@ moveDelay = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_menu_movement();
+            <string>scr_level_select_movement();
 
-if (scr_menu_accept() &amp;&amp; play) room_goto(level_select);
-if (scr_menu_accept() &amp;&amp; instructions) room_goto(instruction_room);
-if (scr_menu_accept() &amp;&amp; exitBox) game_end();
+if (scr_menu_accept() &amp;&amp; level1) room_goto(level_1);
+if (scr_menu_accept() &amp;&amp; level2) room_goto(level_2);
+if (scr_menu_accept() &amp;&amp; level3) room_goto(level_3);
+if (scr_menu_accept() &amp;&amp; back) room_goto(main_menu);
 </string>
           </argument>
         </arguments>
@@ -78,9 +80,11 @@ if (scr_menu_accept() &amp;&amp; exitBox) game_end();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (play) { x2 = 691; y2 = 629; }
-if (instructions) { x2 = 799; y2 = 697; }
-if (exitBox) { x2 = 690; y2 = 778; }
+            <string>if (level1) { x2 = 691; y2 = 629; }
+if (level2) { x2 = 799; y2 = 697; }
+if (level3) { x2 = 690; y2 = 778; }
+if (back) { x2 = 690; y2 = 878; }
+
 
 draw_rectangle(x, y, x2, y2, true);
 </string>

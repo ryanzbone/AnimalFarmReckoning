@@ -5,8 +5,13 @@
   </Configs>
   <NewExtensions/>
   <sounds name="sound">
-    <sound>sound\snd_menu_move</sound>
-    <sound>sound\snd_menu_accept</sound>
+    <sounds name="Menu">
+      <sound>sound\snd_menu_move</sound>
+      <sound>sound\snd_menu_accept</sound>
+    </sounds>
+    <sounds name="Gameplay">
+      <sound>sound\snd_player_spawn</sound>
+    </sounds>
   </sounds>
   <sprites name="sprites">
     <sprites name="Pickups">
@@ -128,11 +133,11 @@
     </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\level_1</room>
     <room>rooms\press_start</room>
     <room>rooms\main_menu</room>
     <room>rooms\level_select</room>
     <room>rooms\The_Beginning</room>
-    <room>rooms\level_1</room>
     <room>rooms\level_2</room>
     <room>rooms\level_3</room>
     <room>rooms\SandBox</room>

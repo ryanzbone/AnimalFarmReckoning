@@ -31,6 +31,7 @@
     <sprites name="Environment">
       <sprite>sprites\spr_floor_basic</sprite>
     </sprites>
+    <sprite>sprites\spr_press_start</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -58,6 +59,7 @@
     <scripts name="World">
       <script>scripts\scr_gravity.gml</script>
     </scripts>
+    <script>scripts\scr_load_menu.gml</script>
   </scripts>
   <objects name="objects">
     <objects name="Player">
@@ -91,10 +93,16 @@
       <object>objects\obj_pickup_spawner</object>
     </objects>
     <object>objects\obj_game_control</object>
+    <objects name="Menus">
+      <object>objects\obj_press_start</object>
+      <object>objects\obj_start_menu</object>
+    </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\press_start</room>
     <room>rooms\The_Beginning</room>
     <room>rooms\SandBox</room>
+    <room>rooms\room3</room>
   </rooms>
   <constants number="16">
     <constant name="killRange">300</constant>

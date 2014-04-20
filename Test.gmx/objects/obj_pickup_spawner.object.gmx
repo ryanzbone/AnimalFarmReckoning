@@ -34,6 +34,8 @@ pickUp[5] = obj_snake_pickup;
 
 spawnRate = 5*room_speed;
 alarm[0] = spawnRate;
+instance_create(random_range(64,room_width/2),-16,pickUp[choose(0,1,2,3,4,5)]);
+instance_create(random_range(room_width/2,room_width-64),-16,pickUp[choose(0,1,2,3,4,5)]);
 </string>
           </argument>
         </arguments>

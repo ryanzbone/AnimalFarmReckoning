@@ -48,7 +48,7 @@ draw_sprite(player2Ammo,0,room_width-ammoBoxSize/2-HUDoffset,ammoBoxSize/2+HUDof
 //set up player 2 lives display
 draw_sprite(spr_p2_lives,0,room_width-ammoBoxSize-sprite_get_width(spr_p2_lives)-HUDoffset,0+HUDoffset);
 for(i = 1; i &lt;= obj_player2.playerLives; i++){
-    draw_sprite(spr_player1,0,room_width -HUDoffset- ammoBoxSize - i*(livesSize+livesSize/2),ammoBoxSize/2+HUDoffset);
+    draw_sprite_ext(spr_player2,0,room_width -HUDoffset- ammoBoxSize - i*(livesSize+livesSize/2),ammoBoxSize/2+HUDoffset,-1,1,0,c_white,1);
 }
 </string>
           </argument>

@@ -7,6 +7,6 @@ if( place_free(x,y+1) ){
     gravity_direction = gravDirection;
     gravity = gravSpeed;
 } else {
-    //gravity_direction = 270;
+    gravity_direction = 270;
     gravity = 0;
 }

@@ -32,6 +32,7 @@
       <sprite>sprites\spr_player2</sprite>
       <sprite>sprites\spr_player1</sprite>
       <sprite>sprites\spr_gun</sprite>
+      <sprite>sprites\spr_crosshair</sprite>
     </sprites>
     <sprites name="Animals">
       <sprite>sprites\spr_snake</sprite>
@@ -74,6 +75,7 @@
       <script>scripts\scr_shoot.gml</script>
       <script>scripts\scr_gun_force.gml</script>
       <script>scripts\scr_bee_shot.gml</script>
+      <script>scripts\scr_player_sprites.gml</script>
     </scripts>
     <scripts name="Collisions">
       <script>scripts\scr_check_bottom_collision.gml</script>

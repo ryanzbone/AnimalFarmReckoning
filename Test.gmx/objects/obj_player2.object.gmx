@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>event_inherited();
 controller = 1;
-gunAngle = 0;
+myGun.image_angle = 180;
 control_right = vk_right;
 control_left = vk_left;
 aimUp = ord('O');

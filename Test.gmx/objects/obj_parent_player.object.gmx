@@ -39,6 +39,7 @@ ammoCount = 0;
 playerLives = 3;
 stunned = false;
 playerColor = c_fuchsia;
+walking = false;
 
 myGun = instance_create(x,y,obj_gun);
 myGun.playerId = id;
@@ -257,22 +258,28 @@ if(other.playerId != id){
           <argument>
             <kind>1</kind>
             <string>// if we've hit a wall, set horizontal speed to zero
+move_contact_solid(direction,32);
+
 if(scr_check_left_collision(spr_player1) || scr_check_right_collision(spr_player1)){
-    if (hspeed &gt; 0)
-        move_contact_solid(0, 12);
-    else 
-        move_contact_solid(180, 12);
     hspeed = 0;
 
 } 
 if(scr_check_top_collision(spr_player1)) {  
-    move_contact_solid(90, 12);
     vspeed *= -0.6;
 } 
 if(scr_check_bottom_collision(spr_player1)) {
-    move_contact_solid(270, 12);
     vspeed = 0;
 }
+
+if( (scr_check_left_collision(spr_player1) &amp;&amp; scr_check_bottom_collision(spr_player1)) || 
+    (scr_check_right_collision(spr_player1)&amp;&amp; scr_check_bottom_collision(spr_player1))){
+        y-=10;
+    } 
+    
+if( (scr_check_left_collision(spr_player1) &amp;&amp; scr_check_top_collision(spr_player1)) || 
+    (scr_check_right_collision(spr_player1)&amp;&amp; scr_check_top_collision(spr_player1))){
+        y+=10;
+    } 
 </string>
           </argument>
         </arguments>
@@ -295,15 +302,7 @@ if(scr_check_bottom_collision(spr_player1)) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_color(c_red);
-draw_self();
-draw_text(x,y-32,playerLives);
-//draw_text(x,y-32,scr_check_top_collision(spr_player1));
-//draw_text(x,y+32,scr_check_bottom_collision(spr_player1));
-//draw_text(x-32,y,scr_check_left_collision(spr_player1));
-//draw_text(x+32,y,scr_check_right_collision(spr_player1));
-//draw_text(x,y-64,vspeed);
-//draw_text(x+64,y,hspeed);
+            <string>scr_player_sprites();
 </string>
           </argument>
         </arguments>

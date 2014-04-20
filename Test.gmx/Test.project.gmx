@@ -6,6 +6,7 @@
   <NewExtensions/>
   <sounds name="sound">
     <sound>sound\snd_menu_move</sound>
+    <sound>sound\snd_menu_accept</sound>
   </sounds>
   <sprites name="sprites">
     <sprites name="Pickups">

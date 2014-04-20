@@ -25,17 +25,31 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>ammoBoxSize = sprite_get_width(spr_ammo_box_p1);
+            <string>var ammoBoxSize = sprite_get_width(spr_ammo_box_p1);
+var HUDoffset = ammoBoxSize;
+var livesSize = sprite_get_width(spr_player1);
 
-//draw_rectangle(0,0,ammoBoxSize,ammoBoxSize,true);
-draw_sprite(spr_ammo_box_p1,0,0,0);
+//Set up player 1 ammo display
+draw_sprite(spr_ammo_box_p1,0,HUDoffset,HUDoffset);
 player1Ammo = scr_check_ammo_type(obj_player1.ammoType);
-draw_sprite(player1Ammo,0,ammoBoxSize/2,ammoBoxSize/2);
+draw_sprite(player1Ammo,0,ammoBoxSize/2+HUDoffset,ammoBoxSize/2+HUDoffset);
 
-//draw_rectangle(room_width-ammoBoxSize,0,room_width-1,ammoBoxSize,true);
-draw_sprite(spr_ammo_box_p2,0,room_width-ammoBoxSize,0);
+//Set up player 1 lives display
+draw_sprite(spr_p1_lives,0,ammoBoxSize+HUDoffset,0+HUDoffset);
+for(i = 1; i &lt;= obj_player1.playerLives; i++){
+    draw_sprite(spr_player1,0,HUDoffset+ammoBoxSize + i*(livesSize+livesSize/2),HUDoffset+ammoBoxSize/2);
+}
+
+//Set up player 2 ammo display
+draw_sprite(spr_ammo_box_p2,0,room_width-ammoBoxSize-HUDoffset,0+HUDoffset);
 player2Ammo = scr_check_ammo_type(obj_player2.ammoType);;
-draw_sprite(player2Ammo,0,room_width-ammoBoxSize/2,ammoBoxSize/2);
+draw_sprite(player2Ammo,0,room_width-ammoBoxSize/2-HUDoffset,ammoBoxSize/2+HUDoffset);
+
+//set up player 2 lives display
+draw_sprite(spr_p2_lives,0,room_width-ammoBoxSize-sprite_get_width(spr_p2_lives)-HUDoffset,0+HUDoffset);
+for(i = 1; i &lt;= obj_player2.playerLives; i++){
+    draw_sprite(spr_player1,0,room_width -HUDoffset- ammoBoxSize - i*(livesSize+livesSize/2),ammoBoxSize/2+HUDoffset);
+}
 </string>
           </argument>
         </arguments>

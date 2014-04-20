@@ -66,6 +66,10 @@ myGun.playerId = id;
             <string>with(myGun){
     instance_destroy();
 }
+
+with(obj_hud_control){
+    instance_destroy();
+}
 </string>
           </argument>
         </arguments>

@@ -80,8 +80,7 @@ ammoType = obj_pig;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-if (!collision_point(x-sprite_get_width(spr_player1),y,obj_parent_floor,false,true))
+            <string>if (!collision_point(x-sprite_get_width(spr_player1),y,obj_parent_floor,false,true))
     scr_movement(moveLeft);
 </string>
           </argument>

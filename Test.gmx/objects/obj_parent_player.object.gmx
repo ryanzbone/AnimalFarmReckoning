@@ -38,6 +38,7 @@ ammoType = obj_no_ammo;
 ammoCount = 0;
 playerLives = 3;
 stunned = false;
+walking = false;
 
 myGun = instance_create(x,y,obj_gun);
 myGun.playerId = id;
@@ -288,16 +289,7 @@ if(scr_check_bottom_collision(spr_player1)) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_color(c_red);
-draw_self();
-image_speed = .5;
-draw_text(x,y-32,playerLives);
-//draw_text(x,y-32,scr_check_top_collision(spr_player1));
-//draw_text(x,y+32,scr_check_bottom_collision(spr_player1));
-//draw_text(x-32,y,scr_check_left_collision(spr_player1));
-//draw_text(x+32,y,scr_check_right_collision(spr_player1));
-//draw_text(x,y-64,vspeed);
-//draw_text(x+64,y,hspeed);
+            <string>scr_player_sprites();
 </string>
           </argument>
         </arguments>

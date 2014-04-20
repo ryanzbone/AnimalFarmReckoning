@@ -6,13 +6,15 @@ if (!stunned) {
     
         case moveRight: { 
             self.hspeed += self.playerSpeed; 
-            if (abs(self.hspeed) > 12) self.hspeed = maxSpeed;  
+            if (abs(self.hspeed) > 12) self.hspeed = maxSpeed;
+            walking = true;  
         }
         break;
         case moveLeft:  { 
             self.hspeed -= self.playerSpeed; 
             if (abs(self.hspeed) > 12) self.hspeed = -maxSpeed;
-        } 
+            walking = true;
+        }
         break;
     }
 }

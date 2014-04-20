@@ -290,6 +290,7 @@ if(scr_check_bottom_collision(spr_player1)) {
             <kind>1</kind>
             <string>draw_set_color(c_red);
 draw_self();
+image_speed = .5;
 draw_text(x,y-32,playerLives);
 //draw_text(x,y-32,scr_check_top_collision(spr_player1));
 //draw_text(x,y+32,scr_check_bottom_collision(spr_player1));

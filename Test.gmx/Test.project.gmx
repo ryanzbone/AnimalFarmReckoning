@@ -21,6 +21,7 @@
       <sprite>sprites\spr_player2</sprite>
       <sprite>sprites\spr_player1</sprite>
       <sprite>sprites\spr_gun</sprite>
+      <sprite>sprites\spr_crosshair</sprite>
     </sprites>
     <sprites name="Animals">
       <sprite>sprites\spr_snake</sprite>

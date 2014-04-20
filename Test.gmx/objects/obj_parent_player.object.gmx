@@ -33,8 +33,10 @@ aimDown = vk_down;
 maxSpeed = playerMaxSpeed;
 playerSpeed = playerMoveSpeed;
 canJump = true;
+jumpCount = 0;
 ammoType = obj_no_ammo;
 ammoCount = 0;
+playerLives = 3;
 
 myGun = instance_create(x,y,obj_gun);
 myGun.playerId = id;
@@ -67,14 +69,27 @@ scr_gravity(gravityDirection, gravityAccel);
 scr_apply_friction(control_right, control_left);
 scr_aim_gun(aimUp,aimDown);
 
-if(scr_check_bottom_collision(spr_player1)) {
+if(scr_check_bottom_collision(spr_player1) ) {
     canJump = true;
-} else {
+    jumpCount = 0;
+} else if (jumpCount &gt;= 2) {
     canJump = false;
 }
 
 if(vspeed &gt; maxSpeed)
     vspeed = maxSpeed;
+    
+if(x &lt; -killRange 
+    || x &gt; room_width + killRange 
+    || y &gt; room_height + killRange/2 
+    || y &lt; -killRange) {
+    playerLives--;
+    x = random_range(64,room_width-64);
+    y = 100;
+    vspeed = 0;
+    hspeed = 0;
+}
+    
 </string>
           </argument>
         </arguments>
@@ -205,11 +220,13 @@ if(scr_check_bottom_collision(spr_player1)) {
             <kind>1</kind>
             <string>draw_set_color(c_red);
 draw_self();
-draw_text(x,y-32,scr_check_top_collision(spr_player1));
-draw_text(x,y+32,scr_check_bottom_collision(spr_player1));
-draw_text(x-32,y,scr_check_left_collision(spr_player1));
-draw_text(x+32,y,scr_check_right_collision(spr_player1));
-draw_text(x,y-64,place_free(x+17,y));
+draw_text(x,y-32,playerLives);
+//draw_text(x,y-32,scr_check_top_collision(spr_player1));
+//draw_text(x,y+32,scr_check_bottom_collision(spr_player1));
+//draw_text(x-32,y,scr_check_left_collision(spr_player1));
+//draw_text(x+32,y,scr_check_right_collision(spr_player1));
+//draw_text(x,y-64,vspeed);
+//draw_text(x+64,y,hspeed);
 </string>
           </argument>
         </arguments>

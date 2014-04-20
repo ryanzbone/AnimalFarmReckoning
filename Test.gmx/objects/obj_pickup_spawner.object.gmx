@@ -6,9 +6,9 @@
   <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
-  <maskName>spr_pickup_mask</maskName>
+  <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="3" enumb="0">
+    <event eventtype="0" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -25,12 +25,43 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_gravity(270,.1);
+            <string>pickUp[0] = obj_pig_pickup;
+pickUp[1] = obj_rabbit_pickup;
+pickUp[2] = obj_elephant_pickup;
+pickUp[3] = obj_mouse_pickup;
+pickUp[4] = obj_bee_pickup;
+pickUp[5] = obj_snake_pickup;
 
-if(scr_check_bottom_collision(spr_player1)) {
-    move_contact_solid(270, 12);
-    vspeed = 0;
-}
+spawnRate = 5*room_speed;
+alarm[0] = spawnRate;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>alarm[0] = spawnRate;
+
+randomize();
+
+instance_create(random_range(64,room_width/2),-16,pickUp[choose(0,1,2,3,4,5)]);
+instance_create(random_range(room_width/2,room_width-64),-16,pickUp[choose(0,1,2,3,4,5)]);
 </string>
           </argument>
         </arguments>

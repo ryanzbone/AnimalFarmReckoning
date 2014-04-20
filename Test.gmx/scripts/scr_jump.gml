@@ -1,4 +1,5 @@
-if (canJump) {
+if (canJump && jumpCount < 1) {
     self.y--;
-    vspeed -= jumpForce;
+    vspeed = -jumpForce;
+    jumpCount++;
 }

@@ -3,7 +3,7 @@
 gravDirection = argument0;
 gravSpeed = argument1;
 
-if( place_free(x,y+17) ){
+if( place_free(x,y+1) ){
     gravity_direction = gravDirection;
     gravity = gravSpeed;
 } else {

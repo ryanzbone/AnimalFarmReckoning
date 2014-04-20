@@ -13,6 +13,7 @@
       <sprite>sprites\spr_rabbit_pickup</sprite>
       <sprite>sprites\spr_elephant_pickup</sprite>
       <sprite>sprites\spr_mouse_pickup</sprite>
+      <sprite>sprites\spr_pickup_mask</sprite>
     </sprites>
     <sprites name="Player">
       <sprite>sprites\spr_player2</sprite>
@@ -45,7 +46,6 @@
       <script>scripts\scr_gun_force.gml</script>
       <script>scripts\scr_bee_shot.gml</script>
     </scripts>
-    <script>scripts\scr_gravity.gml</script>
     <scripts name="Collisions">
       <script>scripts\scr_check_bottom_collision.gml</script>
       <script>scripts\scr_check_top_collision.gml</script>
@@ -54,6 +54,9 @@
     </scripts>
     <scripts name="Controller">
       <script>scripts\scr_controller.gml</script>
+    </scripts>
+    <scripts name="World">
+      <script>scripts\scr_gravity.gml</script>
     </scripts>
   </scripts>
   <objects name="objects">
@@ -85,13 +88,15 @@
       <object>objects\obj_bee_pickup</object>
       <object>objects\obj_snake_pickup</object>
       <object>objects\obj_no_ammo</object>
+      <object>objects\obj_pickup_spawner</object>
     </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\The_Beginning_</room>
+    <room>rooms\The_Beginning</room>
     <room>rooms\SandBox</room>
   </rooms>
-  <constants number="15">
+  <constants number="16">
+    <constant name="killRange">300</constant>
     <constant name="playerMaxSpeed">16</constant>
     <constant name="playerMoveSpeed">3</constant>
     <constant name="gunPower">300</constant>

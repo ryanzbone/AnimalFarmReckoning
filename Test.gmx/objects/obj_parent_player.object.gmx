@@ -185,7 +185,8 @@ if(playerLives &lt;= 0){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>ammoType = other.pickupType;
+            <string>audio_play_sound(snd_reload, 10, false);
+ammoType = other.pickupType;
 ammoCount = other.pickupCount;
 with(other) instance_destroy();
 </string>
@@ -214,6 +215,7 @@ with(other) instance_destroy();
 var vSign = 0;
 var theImpact = 0;
 if(other.playerId != id){
+    audio_play_sound(snd_hit, 10, false);
     with(other) {
         if(hspeed &gt; 0) 
             hSign = 1;

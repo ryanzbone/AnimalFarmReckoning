@@ -11,6 +11,11 @@
     </sounds>
     <sounds name="Gameplay">
       <sound>sound\snd_player_spawn</sound>
+      <sound>sound\snd_gun_shoot</sound>
+      <sound>sound\snd_hit</sound>
+      <sound>sound\snd_empty_gun</sound>
+      <sound>sound\snd_jump</sound>
+      <sound>sound\snd_reload</sound>
     </sounds>
   </sounds>
   <sprites name="sprites">

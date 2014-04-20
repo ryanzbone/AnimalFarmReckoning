@@ -66,6 +66,10 @@ myGun.playerId = id;
             <string>with(myGun){
     instance_destroy();
 }
+
+with(obj_hud_control){
+    instance_destroy();
+}
 </string>
           </argument>
         </arguments>
@@ -124,6 +128,9 @@ if(scr_check_bottom_collision(spr_player1) ) {
 } else {
     canJump = false;
 }
+
+if(ammoCount &lt;= 0) 
+    ammoType = obj_no_ammo;
 
 if(vspeed &gt; maxSpeed)
     vspeed = maxSpeed;

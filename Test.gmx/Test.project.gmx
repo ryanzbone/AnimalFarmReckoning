@@ -70,6 +70,7 @@
     <background>background\bg_main_menu</background>
     <background>background\bg_instructions</background>
     <background>background\bg_level_select</background>
+    <background>background\bg_level_1</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">

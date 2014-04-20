@@ -90,6 +90,7 @@
       <object>objects\obj_no_ammo</object>
       <object>objects\obj_pickup_spawner</object>
     </objects>
+    <object>objects\obj_game_control</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\The_Beginning</room>
@@ -106,12 +107,12 @@
     <constant name="gravityDirection">270</constant>
     <constant name="gravityAccel">1</constant>
     <constant name="jumpForce">25</constant>
-    <constant name="pigAmmo">50</constant>
-    <constant name="elephantAmmo">50</constant>
-    <constant name="rabbitAmmo">50</constant>
-    <constant name="snakeAmmo">50</constant>
-    <constant name="mouseAmmo">50</constant>
-    <constant name="beeAmmo">50</constant>
+    <constant name="pigAmmo">5</constant>
+    <constant name="elephantAmmo">2</constant>
+    <constant name="rabbitAmmo">7</constant>
+    <constant name="snakeAmmo">3</constant>
+    <constant name="mouseAmmo">10</constant>
+    <constant name="beeAmmo">4</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>

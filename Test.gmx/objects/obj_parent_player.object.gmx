@@ -33,13 +33,62 @@ aimDown = vk_down;
 maxSpeed = playerMaxSpeed;
 playerSpeed = playerMoveSpeed;
 canJump = true;
-jumpCount = 0;
+jumpCount = 2;
 ammoType = obj_no_ammo;
 ammoCount = 0;
 playerLives = 3;
+stunned = false;
 
 myGun = instance_create(x,y,obj_gun);
 myGun.playerId = id;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="1" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>with(myGun){
+    instance_destroy();
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>stunned = false;
 </string>
           </argument>
         </arguments>
@@ -72,7 +121,7 @@ scr_aim_gun(aimUp,aimDown);
 if(scr_check_bottom_collision(spr_player1) ) {
     canJump = true;
     jumpCount = 0;
-} else if (jumpCount &gt;= 2) {
+} else {
     canJump = false;
 }
 
@@ -88,6 +137,18 @@ if(x &lt; -killRange
     y = 100;
     vspeed = 0;
     hspeed = 0;
+}
+
+if(playerLives &lt;= 0){
+    if(controller == 0){
+        with(obj_player2) instance_destroy();
+        with(obj_game_control) event_user(1); 
+    } else {
+        with(obj_player1) instance_destroy();
+        with(obj_game_control) event_user(0); 
+    }
+    
+    instance_destroy();
 }
     
 </string>
@@ -139,24 +200,26 @@ with(other) instance_destroy();
             <kind>1</kind>
             <string>var hSign = 0;
 var vSign = 0;
-var theMass = 1;
-with(other) {
-    if(hspeed &gt; 0) 
-        hSign = 1;
-    else
-        hSign = -1;
-    if(vspeed &gt; 0) 
-        vSign = 1;
-    else
-        vSign = -1;
-    theMass = mass;
-    instance_destroy();
+var theImpact = 0;
+if(other.playerId != id){
+    with(other) {
+        if(hspeed &gt; 0) 
+            hSign = 1;
+        else
+            hSign = -1;
+        if(vspeed &gt; 0) 
+            vSign = 1;
+        else
+            vSign = -1;
+        theImpact = impact;
+        instance_destroy();
+    }
+    
+    hspeed += (theImpact * hSign);
+    vspeed += (theImpact * vSign);
+    if(!stunned) stunned = true;
+    alarm[0] = 14;
 }
-
-hspeed += (theMass * hSign);
-vspeed += (theMass * vSign);
-
-
 </string>
           </argument>
         </arguments>

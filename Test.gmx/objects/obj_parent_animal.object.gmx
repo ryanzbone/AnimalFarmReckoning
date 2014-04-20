@@ -27,7 +27,9 @@
             <kind>1</kind>
             <string>mass = 0;
 bounceCount = 3;
-
+impact = 0;
+playerId = 0;
+player1Id = obj_player1.id;
 </string>
           </argument>
         </arguments>
@@ -95,6 +97,12 @@ bounceCount = 3;
             <string>scr_gravity(270, gravityAccel);
 if(hspeed &lt; 0) {
     image_yscale = -1;
+}
+
+if (playerId == player1Id){
+    effect_create_below(ef_smoke, x, y, 0, c_green);
+} else {
+    effect_create_below(ef_spark, x, y, 0, c_red);
 }
 </string>
           </argument>

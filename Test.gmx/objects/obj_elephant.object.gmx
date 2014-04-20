@@ -28,6 +28,7 @@
             <string>event_inherited();
 bounceCount = 2;
 mass = 25;
+impact = 25;
 </string>
           </argument>
         </arguments>

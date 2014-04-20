@@ -2,7 +2,7 @@
 <sprite>
   <xorig>0</xorig>
   <yorigin>16</yorigin>
-  <colkind>2</colkind>
+  <colkind>1</colkind>
   <coltolerance>0</coltolerance>
   <sepmasks>0</sepmasks>
   <bboxmode>0</bboxmode>

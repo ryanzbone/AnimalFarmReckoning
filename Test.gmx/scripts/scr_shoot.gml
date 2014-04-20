@@ -3,6 +3,7 @@ var bulletY = y + lengthdir_y(sprite_get_height(spr_gun), myGun.image_angle);
 
 if (ammoCount > 0) {
     bullet = instance_create(bulletX, bulletY, argument0);
+    bullet.playerId = id;
     bullet.image_angle = myGun.image_angle;
     bullet.direction = myGun.image_angle;
     var gunForce = scr_gun_force(argument0);

@@ -30,11 +30,7 @@ level2 = false;
 level3 = false;
 back = false;
 moveDelay = false;
-global.paused = false
-player1_hspeed = 0;
-player1_vspeed = 0;
-player2_hspeed = 0;
-player2_vspeed = 0;
+paused = false;
 </string>
           </argument>
         </arguments>
@@ -57,27 +53,27 @@ player2_vspeed = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.paused) {
+            <string>if (paused) {
     scr_level_select_movement();
-    
+     
     if (scr_menu_accept() &amp;&amp; level1) {
-        obj_player1.hspeed = player1_hspeed;
-        obj_player1.vspeed = player1_vspeed;
-        obj_player2.hspeed = player2_hspeed;
-        obj_player2.vspeed = player2_vspeed;
-         global.paused = false;       
+         instance_activate_all();  
+         paused = false;   
     }
     if (scr_menu_accept() &amp;&amp; level2) {
-        global.paused = false;
-        room_restart();    
+        instance_activate_all(); 
+        room_restart();   
+         paused = false;      
     }
     if (scr_menu_accept() &amp;&amp; level3) {
-        global.paused = false;
-        room_goto(level_select);
+        instance_activate_all(); 
+        room_goto(level_select);  
+        paused = false;   
     }
     if (scr_menu_accept() &amp;&amp; back) {
-        global.paused = false;
-        room_goto(main_menu);
+        instance_activate_all();
+        room_goto(main_menu);  
+        paused = false;   
     }
 }
 </string>
@@ -103,17 +99,8 @@ player2_vspeed = 0;
           <argument>
             <kind>1</kind>
             <string>if (room == level_1 || room == level_2 || room == level_3) {    
-    global.paused = true;
-    
-    player1_hspeed = obj_player1.hspeed;
-    player1_vspeed = obj_player1.vspeed;
-    player2_hspeed = obj_player2.hspeed;
-    player2_vspeed = obj_player2.vspeed;    
-    
-    obj_player1.hspeed = 0;
-    obj_player1.vspeed = 0;
-    obj_player2.hspeed = 0;
-    obj_player2.vspeed = 0;
+    instance_deactivate_all(true);
+    paused = true;
 }
 </string>
           </argument>
@@ -137,7 +124,7 @@ player2_vspeed = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.paused) {
+            <string>if (paused) {
     y = 450;
     x = room_width/2;
     if (level1) { draw_sprite(sprite_index, 0, x, y) }

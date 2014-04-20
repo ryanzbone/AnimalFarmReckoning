@@ -117,52 +117,52 @@ with(obj_hud_control){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(!global.paused) {
-    scr_controller(controller);
-    scr_gravity(gravityDirection, gravityAccel);
-    scr_apply_friction(control_right, control_left);
-    scr_aim_gun(aimUp,aimDown);
+            <string>
+scr_controller(controller);
+scr_gravity(gravityDirection, gravityAccel);
+scr_apply_friction(control_right, control_left);
+scr_aim_gun(aimUp,aimDown);
+
+if(scr_check_bottom_collision(spr_player1) ) {
+    canJump = true;
+    jumpCount = 0;
+} else {
+    canJump = false;
+}
+
+if(ammoCount &lt;= 0) 
+    ammoType = obj_no_ammo;
+
+if(vspeed &gt; maxSpeed)
+    vspeed = maxSpeed;
     
-    if(scr_check_bottom_collision(spr_player1) ) {
-        canJump = true;
-        jumpCount = 0;
-    } else {
-        canJump = false;
-    }
-    
-    if(ammoCount &lt;= 0) 
-        ammoType = obj_no_ammo;
-    
-    if(vspeed &gt; maxSpeed)
-        vspeed = maxSpeed;
-        
-    if(x &lt; -killRange 
-        || x &gt; room_width + killRange 
-        || y &gt; room_height + killRange/2 
-        || y &lt; -killRange) {
-        playerLives--;
-        audio_play_sound(snd_player_spawn, 10, false);
-        if (playerLives &gt; 0) {
-            x = random_range(64,room_width-64);
-            y = 200;
-            vspeed = 0;
-            hspeed = 0;
-            effect_create_above(ef_smokeup, x, y + 32, 2, playerColor);
-        }
-    }
-    
-    if(playerLives &lt;= 0){
-        if(controller == 0){
-            with(obj_player2) instance_destroy();
-            with(obj_game_control) event_user(1); 
-        } else {
-            with(obj_player1) instance_destroy();
-            with(obj_game_control) event_user(0); 
-        }
-        
-        instance_destroy();
+if(x &lt; -killRange 
+    || x &gt; room_width + killRange 
+    || y &gt; room_height + killRange/2 
+    || y &lt; -killRange) {
+    playerLives--;
+    audio_play_sound(snd_player_spawn, 10, false);
+    if (playerLives &gt; 0) {
+        x = random_range(64,room_width-64);
+        y = 200;
+        vspeed = 0;
+        hspeed = 0;
+        effect_create_above(ef_smokeup, x, y + 32, 2, playerColor);
     }
 }
+
+if(playerLives &lt;= 0){
+    if(controller == 0){
+        with(obj_player2) instance_destroy();
+        with(obj_game_control) event_user(1); 
+    } else {
+        with(obj_player1) instance_destroy();
+        with(obj_game_control) event_user(0); 
+    }
+    
+    instance_destroy();
+}
+
 </string>
           </argument>
         </arguments>

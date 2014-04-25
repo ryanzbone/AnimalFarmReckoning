@@ -111,9 +111,11 @@
       <script>scripts\scr_menu_up.gml</script>
       <script>scripts\scr_load_menu.gml</script>
       <script>scripts\scr_menu_movement.gml</script>
+      <script>scripts\scr_better_menu_movement.gml</script>
       <script>scripts\scr_level_select_movement.gml</script>
       <script>scripts\scr_level_end_menu.gml</script>
       <script>scripts\scr_menu_accept.gml</script>
+      <script>scripts\scr_menu_init.gml</script>
     </scripts>
   </scripts>
   <objects name="objects">

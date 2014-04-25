@@ -84,7 +84,6 @@
   <paths name="paths"/>
   <scripts name="scripts">
     <scripts name="Player">
-      <script>scripts\scr_movement.gml</script>
       <script>scripts\scr_jump.gml</script>
       <script>scripts\scr_apply_friction.gml</script>
       <script>scripts\scr_aim_gun.gml</script>
@@ -92,6 +91,7 @@
       <script>scripts\scr_gun_force.gml</script>
       <script>scripts\scr_bee_shot.gml</script>
       <script>scripts\scr_player_sprites.gml</script>
+      <script>scripts\scr_movement.gml</script>
     </scripts>
     <scripts name="Collisions">
       <script>scripts\scr_check_bottom_collision.gml</script>

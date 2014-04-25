@@ -109,11 +109,7 @@
     <scripts name="Menu">
       <script>scripts\scr_menu_down.gml</script>
       <script>scripts\scr_menu_up.gml</script>
-      <script>scripts\scr_load_menu.gml</script>
-      <script>scripts\scr_menu_movement.gml</script>
       <script>scripts\scr_better_menu_movement.gml</script>
-      <script>scripts\scr_level_select_movement.gml</script>
-      <script>scripts\scr_level_end_menu.gml</script>
       <script>scripts\scr_menu_accept.gml</script>
       <script>scripts\scr_menu_init.gml</script>
     </scripts>
@@ -152,7 +148,6 @@
     <object>objects\obj_game_control</object>
     <object>objects\obj_hud_control</object>
     <objects name="Menus">
-      <object>objects\obj_press_start</object>
       <object>objects\obj_start_menu</object>
       <object>objects\obj_level_select</object>
       <object>objects\obj_pause_menu</object>

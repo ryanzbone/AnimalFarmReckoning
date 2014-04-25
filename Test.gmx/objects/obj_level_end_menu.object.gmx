@@ -25,10 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>level1 = true;
-level2 = false;
-level3 = false;
-moveDelay = false;
+            <string>scr_menu_init(3, 0);
 </string>
           </argument>
         </arguments>
@@ -51,14 +48,71 @@ moveDelay = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_level_end_menu();
-
-if (scr_menu_accept() &amp;&amp; level1) room_restart();
-if (scr_menu_accept() &amp;&amp; level2) room_goto(level_select);
-if (scr_menu_accept() &amp;&amp; level3) room_goto(main_menu);
+            <string>scr_better_menu_movement();
+if (scr_menu_accept()) event_user(currentSelection);
 </string>
           </argument>
         </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="12">
+      <action>
+        <libid>1</libid>
+        <id>224</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_another_room</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>11</kind>
+            <room>main_menu</room>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="11">
+      <action>
+        <libid>1</libid>
+        <id>224</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_another_room</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>11</kind>
+            <room>level_select</room>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="10">
+      <action>
+        <libid>1</libid>
+        <id>223</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_current_room</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
       </action>
     </event>
     <event eventtype="8" enumb="0">
@@ -78,9 +132,7 @@ if (scr_menu_accept() &amp;&amp; level3) room_goto(main_menu);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (level1) { draw_sprite(sprite_index, 0, x, y); }
-if (level2) { draw_sprite(sprite_index, 1, x, y); }
-if (level3) { draw_sprite(sprite_index, 2, x, y); }
+            <string>draw_sprite(sprite_index, currentSelection, x, y);
 </string>
           </argument>
         </arguments>

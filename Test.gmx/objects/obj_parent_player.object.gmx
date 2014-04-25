@@ -301,7 +301,7 @@ if( (scr_check_left_collision(spr_player1) &amp;&amp; scr_check_top_collision(sp
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>with(obj_pause_menu) event_user(2);
+            <string>with(obj_pause_menu) event_user(15);
 </string>
           </argument>
         </arguments>

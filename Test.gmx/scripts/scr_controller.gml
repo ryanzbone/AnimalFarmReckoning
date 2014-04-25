@@ -17,4 +17,4 @@ if (abs(rv) > 0.5 || abs(rh) > 0.5)
     myGun.image_angle = point_direction(myGun.x, myGun.y, myGun.x + rh, myGun.y + rv);
 
 if (gamepad_button_check_pressed(argument0, gp_start)) 
-    with(obj_pause_menu) event_user(2);
+    with(obj_pause_menu) event_user(15);

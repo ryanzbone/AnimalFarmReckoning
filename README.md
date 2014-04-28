@@ -1,5 +1,5 @@
 #Animal Farm Reckoning
-2D competitive local multiplayer game made for the GM48 game jam - guns that don't shoot bullets.
+2D competitive local multiplayer game made for the [GM48 game jam](http://www.gm48.net) - guns that don't shoot bullets.
 
 ##Gameplay
 

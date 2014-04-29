@@ -35,6 +35,8 @@
     <sprites name="Player">
       <sprite>sprites\spr_player2</sprite>
       <sprite>sprites\spr_player1</sprite>
+      <sprite>sprites\spr_player3</sprite>
+      <sprite>sprites\spr_player4</sprite>
       <sprite>sprites\spr_gun</sprite>
       <sprite>sprites\spr_crosshair</sprite>
     </sprites>
@@ -59,12 +61,14 @@
       <sprite>sprites\spr_hud_elephant</sprite>
       <sprite>sprites\spr_hud_mouse</sprite>
       <sprite>sprites\spr_hud_bee</sprite>
-      <sprite>sprites\spr_ammo_box_p1</sprite>
-      <sprite>sprites\spr_p1_lives</sprite>
       <sprite>sprites\spr_ammo_box_p2</sprite>
       <sprite>sprites\spr_p2_lives</sprite>
-      <sprite>sprites\spr_ammo_box_p3</sprite>
+      <sprite>sprites\spr_p4_lives</sprite>
+      <sprite>sprites\spr_ammo_box_p4</sprite>
+      <sprite>sprites\spr_p1_lives</sprite>
+      <sprite>sprites\spr_ammo_box_p1</sprite>
       <sprite>sprites\spr_p3_lives</sprite>
+      <sprite>sprites\spr_ammo_box_p3</sprite>
     </sprites>
     <sprites name="Menus">
       <sprite>sprites\spr_level_end_menu</sprite>
@@ -117,11 +121,14 @@
       <script>scripts\scr_menu_init.gml</script>
     </scripts>
     <script>scripts\scr_player_num_setup.gml</script>
+    <script>scripts\scr_player_spawn.gml</script>
   </scripts>
   <objects name="objects">
     <objects name="Player">
       <object>objects\obj_player1</object>
+      <object>objects\obj_player4</object>
       <object>objects\obj_player2</object>
+      <object>objects\obj_player3</object>
       <object>objects\obj_parent_player</object>
       <object>objects\obj_gun</object>
     </objects>

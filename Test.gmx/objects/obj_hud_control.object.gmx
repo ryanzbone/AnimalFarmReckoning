@@ -79,26 +79,26 @@ if (num_players &gt;= 2) {
 if (num_players &gt;= 3) {
     //Setup player 3 ammo display
     draw_sprite(spr_ammo_box_p3,0,HUDoffset,room_height-(2*HUDoffset));
-    player3Ammo = scr_check_ammo_type(obj_player1.ammoType);
+    player3Ammo = scr_check_ammo_type(obj_player3.ammoType);
     draw_sprite(player3Ammo,0,ammoBoxSize/2+HUDoffset,room_height-(ammoBoxSize/2+HUDoffset));
     
     //Set up player 3 lives display
     draw_sprite(spr_p3_lives,0,ammoBoxSize+HUDoffset,room_height-(2*HUDoffset));
-    for(i = 1; i &lt;= obj_player1.playerLives; i++){
-        draw_sprite(spr_player1,0,HUDoffset+ammoBoxSize + i*(livesSize+livesSize/2),room_height-(HUDoffset+ammoBoxSize/2));
+    for(i = 1; i &lt;= obj_player3.playerLives; i++){
+        draw_sprite(spr_player3,0,HUDoffset+ammoBoxSize + i*(livesSize+livesSize/2),room_height-(HUDoffset+ammoBoxSize/2));
     }
 }
 
 if (num_players &gt;= 4) {
     //Set up player 4 ammo display
-    draw_sprite(spr_ammo_box_p2,0,room_width-ammoBoxSize-HUDoffset,room_height-(2*HUDoffset));
-    player2Ammo = scr_check_ammo_type(obj_player2.ammoType);;
-    draw_sprite(player2Ammo,0,room_width-ammoBoxSize/2-HUDoffset,room_height-(ammoBoxSize/2+HUDoffset));
+    draw_sprite(spr_ammo_box_p4,0,room_width-ammoBoxSize-HUDoffset,room_height-(2*HUDoffset));
+    player4Ammo = scr_check_ammo_type(obj_player4.ammoType);;
+    draw_sprite(player4Ammo,0,room_width-ammoBoxSize/2-HUDoffset,room_height-(ammoBoxSize/2+HUDoffset));
     
     //set up player 4 lives display
-    draw_sprite(spr_p2_lives,0,room_width-ammoBoxSize-sprite_get_width(spr_p2_lives)-HUDoffset,room_height-(2*HUDoffset));
-    for(i = 1; i &lt;= obj_player2.playerLives; i++){
-        draw_sprite_ext(spr_player2,0,room_width -HUDoffset- ammoBoxSize - i*(livesSize+livesSize/2),room_height-(ammoBoxSize/2+HUDoffset),-1,1,0,c_white,1);
+    draw_sprite(spr_p4_lives,0,room_width-ammoBoxSize-sprite_get_width(spr_p4_lives)-HUDoffset,room_height-(2*HUDoffset));
+    for(i = 1; i &lt;= obj_player4.playerLives; i++){
+        draw_sprite_ext(spr_player4,0,room_width -HUDoffset- ammoBoxSize - i*(livesSize+livesSize/2),room_height-(ammoBoxSize/2+HUDoffset),-1,1,0,c_white,1);
     }
 }
 </string>

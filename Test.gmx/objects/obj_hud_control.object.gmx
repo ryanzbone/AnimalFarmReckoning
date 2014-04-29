@@ -8,6 +8,29 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//num_players = obj_game_control.num_players;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
@@ -29,26 +52,54 @@
 var HUDoffset = ammoBoxSize;
 var livesSize = sprite_get_width(spr_player1);
 
-//Set up player 1 ammo display
-draw_sprite(spr_ammo_box_p1,0,HUDoffset,HUDoffset);
-player1Ammo = scr_check_ammo_type(obj_player1.ammoType);
-draw_sprite(player1Ammo,0,ammoBoxSize/2+HUDoffset,ammoBoxSize/2+HUDoffset);
-
-//Set up player 1 lives display
-draw_sprite(spr_p1_lives,0,ammoBoxSize+HUDoffset,0+HUDoffset);
-for(i = 1; i &lt;= obj_player1.playerLives; i++){
-    draw_sprite(spr_player1,0,HUDoffset+ammoBoxSize + i*(livesSize+livesSize/2),HUDoffset+ammoBoxSize/2);
+if (num_players &gt;= 2) {
+    //Set up player 1 ammo display
+    draw_sprite(spr_ammo_box_p1,0,HUDoffset,HUDoffset);
+    player1Ammo = scr_check_ammo_type(obj_player1.ammoType);
+    draw_sprite(player1Ammo,0,ammoBoxSize/2+HUDoffset,ammoBoxSize/2+HUDoffset);
+    
+    //Set up player 1 lives display
+    draw_sprite(spr_p1_lives,0,ammoBoxSize+HUDoffset,0+HUDoffset);
+    for(i = 1; i &lt;= obj_player1.playerLives; i++){
+        draw_sprite(spr_player1,0,HUDoffset+ammoBoxSize + i*(livesSize+livesSize/2),HUDoffset+ammoBoxSize/2);
+    }
+    
+    //Set up player 2 ammo display
+    draw_sprite(spr_ammo_box_p2,0,room_width-ammoBoxSize-HUDoffset,0+HUDoffset);
+    player2Ammo = scr_check_ammo_type(obj_player2.ammoType);;
+    draw_sprite(player2Ammo,0,room_width-ammoBoxSize/2-HUDoffset,ammoBoxSize/2+HUDoffset);
+    
+    //set up player 2 lives display
+    draw_sprite(spr_p2_lives,0,room_width-ammoBoxSize-sprite_get_width(spr_p2_lives)-HUDoffset,0+HUDoffset);
+    for(i = 1; i &lt;= obj_player2.playerLives; i++){
+        draw_sprite_ext(spr_player2,0,room_width -HUDoffset- ammoBoxSize - i*(livesSize+livesSize/2),ammoBoxSize/2+HUDoffset,-1,1,0,c_white,1);
+    }
 }
 
-//Set up player 2 ammo display
-draw_sprite(spr_ammo_box_p2,0,room_width-ammoBoxSize-HUDoffset,0+HUDoffset);
-player2Ammo = scr_check_ammo_type(obj_player2.ammoType);;
-draw_sprite(player2Ammo,0,room_width-ammoBoxSize/2-HUDoffset,ammoBoxSize/2+HUDoffset);
+if (num_players &gt;= 3) {
+    //Setup player 3 ammo display
+    draw_sprite(spr_ammo_box_p3,0,HUDoffset,room_height-(2*HUDoffset));
+    player3Ammo = scr_check_ammo_type(obj_player1.ammoType);
+    draw_sprite(player3Ammo,0,ammoBoxSize/2+HUDoffset,room_height-(ammoBoxSize/2+HUDoffset));
+    
+    //Set up player 3 lives display
+    draw_sprite(spr_p3_lives,0,ammoBoxSize+HUDoffset,room_height-(2*HUDoffset));
+    for(i = 1; i &lt;= obj_player1.playerLives; i++){
+        draw_sprite(spr_player1,0,HUDoffset+ammoBoxSize + i*(livesSize+livesSize/2),room_height-(HUDoffset+ammoBoxSize/2));
+    }
+}
 
-//set up player 2 lives display
-draw_sprite(spr_p2_lives,0,room_width-ammoBoxSize-sprite_get_width(spr_p2_lives)-HUDoffset,0+HUDoffset);
-for(i = 1; i &lt;= obj_player2.playerLives; i++){
-    draw_sprite_ext(spr_player2,0,room_width -HUDoffset- ammoBoxSize - i*(livesSize+livesSize/2),ammoBoxSize/2+HUDoffset,-1,1,0,c_white,1);
+if (num_players &gt;= 4) {
+    //Set up player 4 ammo display
+    draw_sprite(spr_ammo_box_p2,0,room_width-ammoBoxSize-HUDoffset,room_height-(2*HUDoffset));
+    player2Ammo = scr_check_ammo_type(obj_player2.ammoType);;
+    draw_sprite(player2Ammo,0,room_width-ammoBoxSize/2-HUDoffset,room_height-(ammoBoxSize/2+HUDoffset));
+    
+    //set up player 4 lives display
+    draw_sprite(spr_p2_lives,0,room_width-ammoBoxSize-sprite_get_width(spr_p2_lives)-HUDoffset,room_height-(2*HUDoffset));
+    for(i = 1; i &lt;= obj_player2.playerLives; i++){
+        draw_sprite_ext(spr_player2,0,room_width -HUDoffset- ammoBoxSize - i*(livesSize+livesSize/2),room_height-(ammoBoxSize/2+HUDoffset),-1,1,0,c_white,1);
+    }
 }
 </string>
           </argument>

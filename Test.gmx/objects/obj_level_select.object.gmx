@@ -72,7 +72,7 @@ if (scr_menu_accept()) event_user(currentSelection);
         <arguments>
           <argument>
             <kind>11</kind>
-            <room>main_menu</room>
+            <room>player_select</room>
           </argument>
         </arguments>
       </action>

@@ -50,7 +50,7 @@
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="640" hview="480" xport="0" yport="0" wport="640" hport="480" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
   </views>
   <instances>
-    <instance objName="obj_game_control" x="64" y="32" name="inst_DA55B1B8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_floor_basic" x="400" y="640" name="inst_DFAE9A5C" locked="0" code="" scaleX="6" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_floor_basic" x="256" y="768" name="inst_F71A213B" locked="0" code="" scaleX="10" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_floor_basic" x="1088" y="384" name="inst_02659306" locked="0" code="" scaleX="5" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_player1" x="192" y="352" name="inst_9716672B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -60,8 +60,6 @@
     <instance objName="obj_floor_basic" x="192" y="384" name="inst_1C27409A" locked="0" code="" scaleX="5" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_floor_basic" x="640" y="512" name="inst_752F3883" locked="0" code="" scaleX="8" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_floor_basic" x="864" y="640" name="inst_BE0DE115" locked="0" code="" scaleX="6" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_floor_basic" x="400" y="640" name="inst_DFAE9A5C" locked="0" code="" scaleX="6" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_hud_control" x="128" y="192" name="inst_0044D63F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bg_floor_tile" x="112" y="368" w="32" h="32" xo="0" yo="0" id="10000053" name="inst_3BC8807E" depth="-200" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

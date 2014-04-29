@@ -63,6 +63,8 @@
       <sprite>sprites\spr_p1_lives</sprite>
       <sprite>sprites\spr_ammo_box_p2</sprite>
       <sprite>sprites\spr_p2_lives</sprite>
+      <sprite>sprites\spr_ammo_box_p3</sprite>
+      <sprite>sprites\spr_p3_lives</sprite>
     </sprites>
     <sprites name="Menus">
       <sprite>sprites\spr_level_end_menu</sprite>
@@ -70,6 +72,7 @@
       <sprite>sprites\spr_player_wins</sprite>
       <sprite>sprites\spr_main_menu</sprite>
       <sprite>sprites\spr_level_select</sprite>
+      <sprite>sprites\spr_player_select</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -113,6 +116,7 @@
       <script>scripts\scr_menu_accept.gml</script>
       <script>scripts\scr_menu_init.gml</script>
     </scripts>
+    <script>scripts\scr_player_num_setup.gml</script>
   </scripts>
   <objects name="objects">
     <objects name="Player">
@@ -153,6 +157,7 @@
       <object>objects\obj_pause_menu</object>
       <object>objects\obj_level_end_menu</object>
       <object>objects\obj_instructions</object>
+      <object>objects\obj_player_select</object>
     </objects>
     <object>objects\obj_music_manager</object>
   </objects>
@@ -166,6 +171,7 @@
     <room>rooms\level_3</room>
     <room>rooms\SandBox</room>
     <room>rooms\instruction_room</room>
+    <room>rooms\player_select</room>
   </rooms>
   <constants number="16">
     <constant name="killRange">300</constant>

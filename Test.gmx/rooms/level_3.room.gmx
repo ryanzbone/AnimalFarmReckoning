@@ -51,14 +51,12 @@
   </views>
   <instances>
     <instance objName="obj_pickup_spawner" x="32" y="32" name="inst_20C64AD9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_hud_control" x="464" y="64" name="inst_0275115F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_floor_basic" x="352" y="688" name="inst_1076B5A8" locked="0" code="" scaleX="15" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_floor_basic" x="352" y="368" name="inst_2988ADC3" locked="0" code="" scaleX="15" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_player1" x="240" y="336" name="inst_9716672B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_player2" x="1072" y="496" name="inst_633B2ECD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_game_control" x="64" y="32" name="inst_DA55B1B8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_floor_basic" x="976" y="528" name="inst_DA8EFF26" locked="0" code="" scaleX="14" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_floor_basic" x="352" y="688" name="inst_1076B5A8" locked="0" code="" scaleX="15" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_floor_basic" x="976" y="864" name="inst_1934DD1A" locked="0" code="" scaleX="15" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_floor_basic" x="976" y="528" name="inst_DA8EFF26" locked="0" code="" scaleX="14" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bg_floor_tile" x="112" y="352" w="32" h="32" xo="0" yo="0" id="10000157" name="inst_C35825D5" depth="-200" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

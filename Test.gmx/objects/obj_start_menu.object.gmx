@@ -117,7 +117,7 @@ if (scr_menu_accept()) event_user(currentSelection);
         <arguments>
           <argument>
             <kind>11</kind>
-            <room>level_select</room>
+            <room>player_select</room>
           </argument>
         </arguments>
       </action>

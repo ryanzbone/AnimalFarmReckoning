@@ -122,6 +122,7 @@
     </scripts>
     <script>scripts\scr_player_num_setup.gml</script>
     <script>scripts\scr_player_spawn.gml</script>
+    <script>scripts\scr_clear_players.gml</script>
   </scripts>
   <objects name="objects">
     <objects name="Player">

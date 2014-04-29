@@ -151,15 +151,7 @@ if(x &lt; -killRange
     }
 }
 
-if(playerLives &lt;= 0){
-    if(controller == 0){
-        with(obj_player2) instance_destroy();
-        with(obj_game_control) event_user(1); 
-    } else {
-        with(obj_player1) instance_destroy();
-        with(obj_game_control) event_user(0); 
-    }
-    
+if (playerLives &lt;= 0) {
     instance_destroy();
 }
 
